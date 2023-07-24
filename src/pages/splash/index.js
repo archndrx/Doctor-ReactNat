@@ -17,5 +17,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {fontSize: 20, fontWeight: '600', color: '#112340', marginTop: 20},
+  title: {
+    fontSize: 20,
+    fontFamily: 'Nunito-SemiBold',
+    color: '#112340',
+    marginTop: 20,
+  },
 });
