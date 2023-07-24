@@ -2,6 +2,7 @@ import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ILBg, ILLogo} from '../../assets';
 import {Button, Gap} from '../../components';
+import {colors} from '../../utils';
 
 export default function GetStarted({navigation}) {
   return (
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     marginTop: 91,
-    color: 'white',
+    color: colors.white,
     fontFamily: 'Nunito-SemiBold',
   },
 });
