@@ -1,14 +1,13 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {ICBackArrow} from '../../../assets';
-import {Gap} from '../../atoms';
+import {Button, Gap} from '../../atoms';
 import {colors} from '../../../utils';
 
-export default function Header() {
+export default function Header({onPress, title}) {
   return (
     <View style={styles.container}>
-      <ICBackArrow />
-      <Text style={styles.text}>Daftar Akun</Text>
+      <Button type={'icon-only'} icon={'back-dark'} onPress={onPress} />
+      <Text style={styles.text}>{title}</Text>
       <Gap width={24} />
     </View>
   );
