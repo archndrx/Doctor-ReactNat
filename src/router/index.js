@@ -1,8 +1,29 @@
 import React from 'react';
-import {GetStarted, Login, Register, Splash, UploadPhoto} from '../pages';
+import {
+  Doctors,
+  GetStarted,
+  Hospitals,
+  Login,
+  Messages,
+  Register,
+  Splash,
+  UploadPhoto,
+} from '../pages';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 const {createNativeStackNavigator} = require('@react-navigation/native-stack');
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const MainApp = () => {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen name="Doctors" component={Doctors} />
+      <Tab.Screen name="Messages" component={Messages} />
+      <Tab.Screen name="Hospitals" component={Hospitals} />
+    </Tab.Navigator>
+  );
+};
 
 const Router = () => {
   return (
@@ -14,6 +35,7 @@ const Router = () => {
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="UploadPhoto" component={UploadPhoto} />
+      <Stack.Screen name="MainApp" component={MainApp} />
     </Stack.Navigator>
   );
 };
