@@ -10,6 +10,7 @@ import {
   UploadPhoto,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {BottomNavigator} from '../components';
 const {createNativeStackNavigator} = require('@react-navigation/native-stack');
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +18,9 @@ const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+      tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Doctors" component={Doctors} />
       <Tab.Screen name="Messages" component={Messages} />
       <Tab.Screen name="Hospitals" component={Hospitals} />
