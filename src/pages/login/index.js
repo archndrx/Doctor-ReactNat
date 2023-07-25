@@ -4,7 +4,7 @@ import {ILLogo} from '../../assets';
 import {Button, Gap, Input, LinkText} from '../../components';
 import {colors, fonts} from '../../utils';
 
-export default function Login() {
+export default function Login({navigation}) {
   return (
     <View style={styles.page}>
       <ILLogo />
@@ -15,7 +15,7 @@ export default function Login() {
       <Gap height={10} />
       <LinkText text={'Forgot My Password'} size={12} />
       <Gap height={40} />
-      <Button title={'Sign In'} />
+      <Button title={'Sign In'} onPress={() => navigation.replace('MainApp')} />
       <Gap height={30} />
       <LinkText text={'Create New Account'} size={16} align={'center'} />
     </View>
