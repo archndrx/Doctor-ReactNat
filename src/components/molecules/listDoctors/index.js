@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 16,
     borderBottomWidth: 1,
-        borderBottomColor: colors.border,
-    alignItems:'center',
+    borderBottomColor: colors.border,
+    alignItems: 'center',
   },
   avatar: {
     width: 46,
