@@ -1,17 +1,14 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import {DumDok2} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function ListDoctors() {
+export default function ListDoctors({profile, name, desc}) {
   return (
     <View style={styles.container}>
-      <Image source={DumDok2} style={styles.avatar} />
+      <Image source={profile} style={styles.avatar} />
       <View>
-        <Text style={styles.name}>Alexander Jannie</Text>
-        <Text style={styles.chat}>
-          Baik ibu, terima kasih banyak atas wakt...
-        </Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.chat}>{desc}</Text>
       </View>
     </View>
   );
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
     color: colors.text.primary,
   },
   chat: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: fonts.primary[300],
     color: colors.text.secondary,
   },
