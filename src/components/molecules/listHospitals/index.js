@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     color: colors.text.primary,
   },
   subTitle: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: fonts.primary[300],
     color: colors.text.secondary,
     marginTop: 6,
