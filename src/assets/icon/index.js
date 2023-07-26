@@ -7,6 +7,7 @@ import ICMessages from './ic-messages.svg';
 import ICMessagesActive from './ic-messages-active.svg';
 import ICHospitals from './ic-hospitals.svg';
 import ICHospitalsActive from './ic-hospitals-active.svg';
+import ICStar from './star.svg';
 
 export {
   ICBackArrow,
@@ -18,4 +19,5 @@ export {
   ICHospitalsActive,
   ICMessages,
   ICMessagesActive,
+  ICStar,
 };
