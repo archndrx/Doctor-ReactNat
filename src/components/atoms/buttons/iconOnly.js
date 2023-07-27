@@ -1,6 +1,6 @@
 import {TouchableOpacity} from 'react-native';
 import React from 'react';
-import {ICBackArrow} from '../../../assets';
+import {ICBackArrow, ICBackArrowLight} from '../../../assets';
 
 export default function IconOnlyButton({onPress, icon}) {
   const Icon = () => {
@@ -8,7 +8,7 @@ export default function IconOnlyButton({onPress, icon}) {
       return <ICBackArrow />;
     }
     if (icon === 'back-light') {
-      return <ICBackArrow />;
+      return <ICBackArrowLight />;
     }
     return <ICBackArrow />;
   };
