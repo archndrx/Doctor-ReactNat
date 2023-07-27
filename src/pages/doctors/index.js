@@ -8,9 +8,9 @@ import {
   RatedDoctor,
 } from '../../components';
 import {colors, fonts} from '../../utils';
-import { JSONDoctorCategory } from '../../assets';
+import {JSONDoctorCategory} from '../../assets';
 
-export default function Doctors() {
+export default function Doctors({navigation}) {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -28,11 +28,15 @@ export default function Doctors() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.category}>
                 <Gap width={32} />
-                {
-                  JSONDoctorCategory.data.map(item => {
-                    return <DoctorCategory key={item.id} category={item.category} />
-                  })
-                }
+                {JSONDoctorCategory.data.map(item => {
+                  return (
+                    <DoctorCategory
+                      key={item.id}
+                      category={item.category}
+                      onPress={() => navigation.navigate('ChooseDoctors')}
+                    />
+                  );
+                })}
                 <Gap width={22} />
               </View>
             </ScrollView>
