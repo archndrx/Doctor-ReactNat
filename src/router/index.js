@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ChooseDoctors,
   Doctors,
   GetStarted,
   Hospitals,
@@ -39,6 +40,7 @@ const Router = () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="UploadPhoto" component={UploadPhoto} />
       <Stack.Screen name="MainApp" component={MainApp} />
+      <Stack.Screen name="ChooseDoctors" component={ChooseDoctors} />
     </Stack.Navigator>
   );
 };
