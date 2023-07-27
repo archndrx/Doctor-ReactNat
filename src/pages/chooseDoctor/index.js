@@ -2,6 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Header, ListDoctors} from '../../components';
 import {DumDok1} from '../../assets';
+import Chat from '../chat';
 
 export default function ChooseDoctors({navigation}) {
   return (
@@ -16,6 +17,7 @@ export default function ChooseDoctors({navigation}) {
         name={'Alexander Jannie'}
         desc={'Wanita'}
         type={'next'}
+        onPress={() => navigation.navigate(Chat)}
       />
       <ListDoctors
         profile={DumDok1}

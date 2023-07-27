@@ -1,18 +1,18 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
 import {ICNextArrow} from '../../../assets';
 
-export default function ListDoctors({profile, name, desc, type}) {
+export default function ListDoctors({profile, name, desc, type, onPress}) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={profile} style={styles.avatar} />
       <View style={styles.textWrapper}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.chat}>{desc}</Text>
       </View>
       {type === 'next' && <ICNextArrow />}
-    </View>
+    </TouchableOpacity>
   );
 }
 
