@@ -2,8 +2,14 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Button, Gap} from '../../atoms';
 import {colors, fonts} from '../../../utils';
+import ProfileHeader from './profile';
 
-export default function Header({onPress, title, type}) {
+export default function Header({onPress, title, subtitle, type}) {
+  if (type === 'dark-profile') {
+    return (
+      <ProfileHeader onPress={onPress} title={title} subtitle={subtitle} />
+    );
+  }
   return (
     <View style={styles.container(type)}>
       <Button
