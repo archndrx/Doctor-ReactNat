@@ -10,6 +10,8 @@ import ICHospitals from './ic-hospitals.svg';
 import ICHospitalsActive from './ic-hospitals-active.svg';
 import ICStar from './star.svg';
 import ICNextArrow from './arrow_right.svg';
+import ICSend from './ic-send.svg';
+import ICSendActive from './ic-send-active.svg';
 
 export {
   ICBackArrow,
@@ -24,4 +26,6 @@ export {
   ICMessages,
   ICMessagesActive,
   ICStar,
+  ICSend,
+  ICSendActive,
 };
