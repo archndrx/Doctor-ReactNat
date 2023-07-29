@@ -9,6 +9,7 @@ import {
 } from '../../components';
 import {colors, fonts} from '../../utils';
 import {JSONDoctorCategory} from '../../assets';
+import UserProfile from '../userProfile';
 
 export default function Doctors({navigation}) {
   return (
@@ -17,7 +18,7 @@ export default function Doctors({navigation}) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.profileWrapper}>
             <Gap height={30} />
-            <HomeProfile />
+            <HomeProfile onPress={() => navigation.navigate(UserProfile)} />
             <Gap height={30} />
             <Text style={styles.welcomeText}>
               Mau konsultasi dengan siapa hari ini?
