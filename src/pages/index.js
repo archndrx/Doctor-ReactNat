@@ -11,7 +11,6 @@ import Chat from './chat';
 import UserProfile from './userProfile';
 import UpdateProfile from './updateProfile';
 
-
 export {
   Splash,
   GetStarted,
