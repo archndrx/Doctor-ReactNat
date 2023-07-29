@@ -12,6 +12,10 @@ import ICStar from './star.svg';
 import ICNextArrow from './arrow_right.svg';
 import ICSend from './ic-send.svg';
 import ICSendActive from './ic-send-active.svg';
+import ICEditProfile from './ic-edit-profile.svg';
+import ICHelp from './ic-help.svg';
+import ICLanguage from './ic-language.svg';
+import ICRate from './ic-rate.svg';
 
 export {
   ICBackArrow,
@@ -28,4 +32,8 @@ export {
   ICStar,
   ICSend,
   ICSendActive,
+  ICEditProfile,
+  ICHelp,
+  ICLanguage,
+  ICRate,
 };
