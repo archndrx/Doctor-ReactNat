@@ -8,6 +8,9 @@ import Messages from './messages';
 import Hospitals from './hospitals';
 import ChooseDoctors from './chooseDoctor';
 import Chat from './chat';
+import UserProfile from './userProfile';
+import UpdateProfile from './updateProfile';
+
 
 export {
   Splash,
@@ -20,4 +23,6 @@ export {
   Hospitals,
   ChooseDoctors,
   Chat,
+  UserProfile,
+  UpdateProfile,
 };

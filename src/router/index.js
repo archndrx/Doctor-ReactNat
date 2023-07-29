@@ -10,9 +10,11 @@ import {
   Register,
   Splash,
   UploadPhoto,
+  UserProfile,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
+import UpdateProfile from '../pages/updateProfile';
 const {createNativeStackNavigator} = require('@react-navigation/native-stack');
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +45,8 @@ const Router = () => {
       <Stack.Screen name="MainApp" component={MainApp} />
       <Stack.Screen name="ChooseDoctors" component={ChooseDoctors} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="UserProfile" component={UserProfile} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
     </Stack.Navigator>
   );
 };
