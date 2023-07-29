@@ -8,8 +8,9 @@ import {
   RatedDoctor,
 } from '../../components';
 import {colors, fonts} from '../../utils';
-import {JSONDoctorCategory} from '../../assets';
+import {DumDok1, DumDok2, DumDok3, JSONDoctorCategory} from '../../assets';
 import UserProfile from '../userProfile';
+import DoctorProfile from '../doctorProfile';
 
 export default function Doctors({navigation}) {
   return (
@@ -44,9 +45,24 @@ export default function Doctors({navigation}) {
           </View>
           <View style={styles.ratedWrapper}>
             <Text style={styles.labelText}>Top Rated Doctors</Text>
-            <RatedDoctor />
-            <RatedDoctor />
-            <RatedDoctor />
+            <RatedDoctor
+              avatar={DumDok1}
+              name={'Alexa Rachel'}
+              desc={'Pediatrician'}
+              onPress={() => navigation.navigate(DoctorProfile)}
+            />
+            <RatedDoctor
+              avatar={DumDok2}
+              name={'Sunny Frank'}
+              desc={'Dentist'}
+              onPress={() => navigation.navigate(DoctorProfile)}
+            />
+            <RatedDoctor
+              avatar={DumDok3}
+              name={'Poe Minn'}
+              desc={'Podiatrist'}
+              onPress={() => navigation.navigate(DoctorProfile)}
+            />
             <Text style={styles.labelText}>Good News</Text>
           </View>
 
