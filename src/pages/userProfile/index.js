@@ -1,7 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Gap, Header, ListItems, Profile} from '../../components';
-import { colors } from '../../utils';
+import {colors} from '../../utils';
+import UpdateProfile from '../updateProfile';
 
 export default function UserProfile({navigation}) {
   return (
@@ -15,6 +16,7 @@ export default function UserProfile({navigation}) {
         name={'Edit Profile'}
         desc={'Last Update Yesterday'}
         icon={'edit'}
+        onPress={() => navigation.navigate(UpdateProfile)}
       />
       <ListItems
         type={'next'}
