@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Chat,
   ChooseDoctors,
+  DoctorProfile,
   Doctors,
   GetStarted,
   Hospitals,
@@ -47,6 +48,7 @@ const Router = () => {
       <Stack.Screen name="Chat" component={Chat} />
       <Stack.Screen name="UserProfile" component={UserProfile} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
+      <Stack.Screen name="DoctorProfile" component={DoctorProfile} />
     </Stack.Navigator>
   );
 };
