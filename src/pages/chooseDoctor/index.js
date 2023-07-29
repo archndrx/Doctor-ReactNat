@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {Header, ListDoctors} from '../../components';
+import {Header, ListItems} from '../../components';
 import {DumDok1} from '../../assets';
 import Chat from '../chat';
 
@@ -12,32 +12,32 @@ export default function ChooseDoctors({navigation}) {
         type={'dark'}
         onPress={() => navigation.goBack()}
       />
-      <ListDoctors
+      <ListItems
         profile={DumDok1}
         name={'Alexander Jannie'}
         desc={'Wanita'}
         type={'next'}
         onPress={() => navigation.navigate(Chat)}
       />
-      <ListDoctors
+      <ListItems
         profile={DumDok1}
         name={'Alexander Jannie'}
         desc={'Wanita'}
         type={'next'}
       />
-      <ListDoctors
+      <ListItems
         profile={DumDok1}
         name={'Alexander Jannie'}
         desc={'Wanita'}
         type={'next'}
       />
-      <ListDoctors
+      <ListItems
         profile={DumDok1}
         name={'Alexander Jannie'}
         desc={'Wanita'}
         type={'next'}
       />
-      <ListDoctors
+      <ListItems
         profile={DumDok1}
         name={'Alexander Jannie'}
         desc={'Wanita'}

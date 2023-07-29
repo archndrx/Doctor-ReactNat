@@ -1,12 +1,33 @@
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
-import {ICNextArrow} from '../../../assets';
+import {
+  ICEditProfile,
+  ICHelp,
+  ICLanguage,
+  ICNextArrow,
+  ICRate,
+} from '../../../assets';
 
-export default function ListDoctors({profile, name, desc, type, onPress}) {
+export default function ListItems({profile, name, desc, type, onPress, icon}) {
+  const Icon = () => {
+    if (icon === 'edit') {
+      return <ICEditProfile />;
+    }
+    if (icon === 'help') {
+      return <ICHelp />;
+    }
+    if (icon === 'lang') {
+      return <ICLanguage />;
+    }
+    if (icon === 'rate') {
+      return <ICRate />;
+    }
+    return <ICEditProfile />;
+  };
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={profile} style={styles.avatar} />
+      {icon ? <Icon /> : <Image source={profile} style={styles.avatar} />}
       <View style={styles.textWrapper}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.chat}>{desc}</Text>
@@ -27,11 +48,11 @@ const styles = StyleSheet.create({
   },
   textWrapper: {
     flex: 1,
+    marginLeft: 16,
   },
   avatar: {
     width: 46,
     height: 46,
-    marginRight: 16,
   },
   name: {
     fontSize: 16,
