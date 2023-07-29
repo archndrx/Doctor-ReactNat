@@ -1,15 +1,15 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {DumDok1, ICStar} from '../../../assets';
+import {ICStar} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function RatedDoctor() {
+export default function RatedDoctor({name, desc, avatar, onPress}) {
   return (
-    <View style={styles.container}>
-      <Image source={DumDok1} style={styles.avatar} />
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Image source={avatar} style={styles.avatar} />
       <View style={styles.textWrapper}>
-        <Text style={styles.nameText}>Alexa Rachel</Text>
-        <Text style={styles.jobText}>Pediatrician</Text>
+        <Text style={styles.nameText}>{name}</Text>
+        <Text style={styles.jobText}>{desc}</Text>
       </View>
       <View style={styles.rate}>
         <ICStar />
@@ -18,7 +18,7 @@ export default function RatedDoctor() {
         <ICStar />
         <ICStar />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 16,
+    alignItems: 'center',
   },
   avatar: {
     width: 50,
