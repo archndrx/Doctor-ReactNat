@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229875155017",
+    "project_id": "doctor-react-native",
+    "storage_bucket": "doctor-react-native.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229875155017:android:d796a56e570a33f9fc7f98",
+        "android_client_info": {
+          "package_name": "com.doctorreact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229875155017-hnt8ao55jqvaj7gt7hvnsbhv47pd3pfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWmqC0rMh2lKB27AJhI7kDSZCqyi_3ZOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229875155017-hnt8ao55jqvaj7gt7hvnsbhv47pd3pfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
