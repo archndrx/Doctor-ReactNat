@@ -25,7 +25,6 @@ export default function Doctors({navigation}) {
               Mau konsultasi dengan siapa hari ini?
             </Text>
           </View>
-
           <View style={styles.scrollWrapper}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.category}>
@@ -65,10 +64,11 @@ export default function Doctors({navigation}) {
             />
             <Text style={styles.labelText}>Good News</Text>
           </View>
-
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
+          <View style={styles.newsContent}>
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
+          </View>
           <Gap height={30} />
         </ScrollView>
       </View>
@@ -111,6 +111,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   profileWrapper: {
+    paddingHorizontal: 16,
+  },
+  newsContent: {
     paddingHorizontal: 16,
   },
 });
