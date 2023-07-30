@@ -9,7 +9,7 @@ export default function UpdateProfile({navigation}) {
       <Header title={'Edit Profile'} onPress={() => navigation.goBack()} />
       <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={styles.content}>
-          <Profile />
+          <Profile isRemove={true} />
           <Gap height={26} />
           <Input label={'Full name'} />
           <Gap height={24} />
