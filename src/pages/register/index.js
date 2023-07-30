@@ -22,6 +22,7 @@ export default function Register({navigation}) {
       .createUserWithEmailAndPassword(form.email, form.pass)
       .then(success => {
         setLoading(false);
+        setForm('reset');
         console.log('register success', success);
         navigation.navigate('UploadPhoto');
       })
