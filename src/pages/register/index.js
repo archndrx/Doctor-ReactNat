@@ -4,6 +4,7 @@ import React from 'react';
 import {Button, Gap, Header, Input, Loading} from '../../components';
 import {colors, useForm} from '../../utils';
 import auth from '@react-native-firebase/auth';
+import {showMessage} from 'react-native-flash-message';
 
 export default function Register({navigation}) {
   const [form, setForm] = useForm({
@@ -29,6 +30,11 @@ export default function Register({navigation}) {
       .catch(error => {
         const errorMessage = error.message;
         setLoading(false);
+        showMessage({
+          message: errorMessage,
+          backgroundColor: colors.error,
+          color: colors.white,
+        });
         console.log('register error : ', errorMessage);
       });
   };
