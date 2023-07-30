@@ -18,9 +18,17 @@ export default function UploadPhoto({navigation}) {
           <Text style={styles.jobText}>Product Designer</Text>
         </View>
         <View>
-          <Button title={'Upload and Continue'} />
+          <Button
+            title={'Upload and Continue'}
+            onPress={() => navigation.replace('MainApp')}
+          />
           <Gap height={30} />
-          <LinkText text={'Skip for this'} size={16} align={'center'} />
+          <LinkText
+            text={'Skip for this'}
+            size={16}
+            align={'center'}
+            onPress={() => navigation.replace('MainApp')}
+          />
         </View>
       </View>
     </View>
@@ -30,6 +38,7 @@ export default function UploadPhoto({navigation}) {
 const styles = StyleSheet.create({
   page: {
     flex: 1,
+    backgroundColor: colors.white,
   },
   content: {
     paddingHorizontal: 40,

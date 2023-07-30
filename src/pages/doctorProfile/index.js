@@ -1,7 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, Profile, ProfileItem} from '../../components';
 import {colors} from '../../utils';
+import Chat from '../chat';
 
 export default function DoctorProfile({navigation}) {
   return (
@@ -16,7 +17,10 @@ export default function DoctorProfile({navigation}) {
       />
       <ProfileItem label={'No. STR'} desc={'092190410171'} />
       <View style={styles.buttonAction}>
-        <Button title={'Start Consultation'} />
+        <Button
+          title={'Start Consultation'}
+          onPress={() => navigation.navigate(Chat)}
+        />
       </View>
     </View>
   );

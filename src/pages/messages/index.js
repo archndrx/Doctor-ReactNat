@@ -3,8 +3,9 @@ import React, {useState} from 'react';
 import {ListItems} from '../../components';
 import {colors, fonts} from '../../utils';
 import {DumDok1, DumDok2, DumDok3} from '../../assets';
+import Chat from '../chat';
 
-export default function Messages() {
+export default function Messages({navigation}) {
   const [doctors] = useState([
     {
       id: 1,
@@ -36,6 +37,7 @@ export default function Messages() {
               profile={doctor.profile}
               name={doctor.name}
               desc={doctor.desc}
+              onPress={() => navigation.navigate(Chat)}
             />
           );
         })}

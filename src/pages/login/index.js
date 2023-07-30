@@ -3,6 +3,7 @@ import React from 'react';
 import {ILLogo} from '../../assets';
 import {Button, Gap, Input, LinkText} from '../../components';
 import {colors, fonts} from '../../utils';
+import Register from '../register';
 
 export default function Login({navigation}) {
   return (
@@ -17,7 +18,12 @@ export default function Login({navigation}) {
       <Gap height={40} />
       <Button title={'Sign In'} onPress={() => navigation.replace('MainApp')} />
       <Gap height={30} />
-      <LinkText text={'Create New Account'} size={16} align={'center'} />
+      <LinkText
+        text={'Create New Account'}
+        size={16}
+        align={'center'}
+        onPress={() => navigation.navigate(Register)}
+      />
     </View>
   );
 }
