@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     paddingBottom: 12,
     paddingTop: 16,
-    paddingHorizontal: 16,
   },
   image: {
     width: 80,
