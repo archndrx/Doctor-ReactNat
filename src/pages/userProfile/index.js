@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Gap, Header, ListItems, Profile} from '../../components';
 import {colors} from '../../utils';
@@ -9,7 +9,7 @@ export default function UserProfile({navigation}) {
     <View style={styles.page}>
       <Header title={'Profile'} onPress={() => navigation.goBack()} />
       <Gap height={10} />
-      <Profile />
+      <Profile name={'Shayna Melinda'} desc={'Product Designer'} />
       <Gap height={14} />
       <ListItems
         type={'next'}
