@@ -1,7 +1,8 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import {Button, Gap, Header, Input} from '../../components';
 import {colors, useForm} from '../../utils';
+import auth from '@react-native-firebase/auth';
 
 export default function Register({navigation}) {
   const [form, setForm] = useForm({
@@ -10,9 +11,17 @@ export default function Register({navigation}) {
     email: '',
     pass: '',
   });
-
   const onContinue = () => {
     console.log(form);
+    auth()
+      .createUserWithEmailAndPassword(form.email, form.pass)
+      .then(success => {
+        console.log('register success', success);
+      })
+      .catch(error => {
+        const errorMessage = error.message;
+        console.log('register error : ', errorMessage);
+      });
     navigation.navigate('UploadPhoto');
   };
 
