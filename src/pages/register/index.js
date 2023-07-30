@@ -1,10 +1,11 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, Input} from '../../components';
+import {colors} from '../../utils';
 
 export default function Register({navigation}) {
   return (
-    <View>
+    <View style={styles.page}>
       <Header title={'Daftar Akun'} onPress={() => navigation.goBack()} />
       <View style={styles.content}>
         <Input label={'Full Name'} />
@@ -25,6 +26,10 @@ export default function Register({navigation}) {
 }
 
 const styles = StyleSheet.create({
+  page: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
   content: {
     padding: 40,
     paddingTop: 0,
