@@ -2,7 +2,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {useState} from 'react';
 import React from 'react';
 import {Button, Gap, Header, Input, Loading} from '../../components';
-import {colors, useForm} from '../../utils';
+import {colors, storeData, useForm} from '../../utils';
 import {showMessage} from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
@@ -34,8 +34,9 @@ export default function Register({navigation}) {
           .ref('/users/' + success.user.uid + '/')
           .set(data)
           .then(() => console.log('Data set.'));
-        console.log('register success', success);
+        storeData('user', data);
         navigation.navigate('UploadPhoto');
+        console.log('register success', success);
       })
       .catch(error => {
         const errorMessage = error.message;
