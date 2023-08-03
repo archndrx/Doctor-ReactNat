@@ -3,8 +3,9 @@ import {useState} from 'react';
 import React from 'react';
 import {Button, Gap, Header, Input, Loading} from '../../components';
 import {colors, useForm} from '../../utils';
-import auth from '@react-native-firebase/auth';
 import {showMessage} from 'react-native-flash-message';
+import auth from '@react-native-firebase/auth';
+import database from '@react-native-firebase/database';
 
 export default function Register({navigation}) {
   const [form, setForm] = useForm({
@@ -24,6 +25,15 @@ export default function Register({navigation}) {
       .then(success => {
         setLoading(false);
         setForm('reset');
+        const data = {
+          fullName: form.fullName,
+          job: form.job,
+          email: form.email,
+        };
+        database()
+          .ref('/users/' + success.user.uid + '/')
+          .set(data)
+          .then(() => console.log('Data set.'));
         console.log('register success', success);
         navigation.navigate('UploadPhoto');
       })
