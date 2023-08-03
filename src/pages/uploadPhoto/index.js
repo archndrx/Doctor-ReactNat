@@ -1,19 +1,43 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useState} from 'react';
 import {Button, Gap, Header, LinkText} from '../../components';
-import {ICAddPhoto, ILUserPhotoNull} from '../../assets';
+import {ICAddPhoto, ICRemovePhoto, ILUserPhotoNull} from '../../assets';
 import {colors, fonts} from '../../utils';
+import * as ImagePicker from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
 export default function UploadPhoto({navigation}) {
+  const [hasPhoto, setHasPhoto] = useState(false);
+  const [photo, setPhoto] = useState(ILUserPhotoNull);
+  const getImage = () => {
+    ImagePicker.launchImageLibrary({}, response => {
+      console.log('Response = ', response);
+
+      if (response.didCancel || response.error) {
+        showMessage({
+          message: 'Failed to upload photo',
+          type: 'default',
+        });
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        const source = {uri: response.assets[0].uri};
+        setPhoto(source);
+        setHasPhoto(true);
+      }
+    });
+  };
   return (
     <View style={styles.page}>
       <Header title={'Upload Photo'} onPress={() => navigation.goBack()} />
       <View style={styles.content}>
         <View style={styles.profile}>
-          <View style={styles.avatarWrapper}>
-            <Image source={ILUserPhotoNull} style={styles.avatar} />
-            <ICAddPhoto style={styles.addPhoto} />
-          </View>
+          <TouchableOpacity style={styles.avatarWrapper} onPress={getImage}>
+            <Image source={photo} style={styles.avatar} />
+            {hasPhoto && <ICRemovePhoto style={styles.addPhoto} />}
+            {!hasPhoto && <ICAddPhoto style={styles.addPhoto} />}
+          </TouchableOpacity>
           <Text style={styles.nameText}>Shayna Melinda</Text>
           <Text style={styles.jobText}>Product Designer</Text>
         </View>
@@ -21,6 +45,7 @@ export default function UploadPhoto({navigation}) {
           <Button
             title={'Upload and Continue'}
             onPress={() => navigation.replace('MainApp')}
+            disable={!hasPhoto}
           />
           <Gap height={30} />
           <LinkText
@@ -49,6 +74,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 110,
     height: 110,
+    borderRadius: 110 / 2,
   },
   avatarWrapper: {
     width: 130,
